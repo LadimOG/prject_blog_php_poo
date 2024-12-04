@@ -1,0 +1,29 @@
+services:
+      
+  db:
+    image: mysql:latest 
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DB_NAME}
+      MYSQL_USER: ${MYSQL_DB_USER} 
+      MYSQL_PASSWORD: ${MYSQL_DB_PASSWORD}  
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql  
+      - /etc/timezone:/etc/timezone:ro  # Synchronise le fuseau horaire avec l'hôte
+      - /etc/localtime:/etc/localtime:ro  # Synchronise l'heure avec l'hôte
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 8081:80
+    environment:
+      PMA_HOST: db
+
+volumes:
+  mysql_data: # Crée un volume nommé "mysql_data" pour stocker les données de MySQL     
+

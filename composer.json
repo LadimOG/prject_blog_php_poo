@@ -1,0 +1,19 @@
+{
+    "name": "ladim-root/learn-poo",
+    
+    "description": "blog",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ladim",
+            "email": "nimirf-dimitri@hotmail.fr"
+        }
+    ],
+    "require": {
+        "nikic/fast-route": "^1.3"
+    }
+}
