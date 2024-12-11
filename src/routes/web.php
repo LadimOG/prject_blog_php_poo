@@ -2,7 +2,8 @@
 
 use FastRoute\RouteCollector;
 
-
+//route Admin
+$r->get('/admin', ['App\Controllers\AdminController', 'showDashboard']);
 
 //affichage de la page 404
 $r->get('/404', ['App\Controllers\Page404', 'show404']);

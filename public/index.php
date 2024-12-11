@@ -7,6 +7,11 @@ use FastRoute\Dispatcher;
 use FastRoute\RouteCollector;
 
 $container = [
+
+    'App\Controllers\AdminController' => function () {
+        return new \App\Controllers\AdminController(new \App\Services\AdminManager);
+    },
+
     'App\Controllers\HomeController' => function () {
         return new \App\Controllers\HomeController(new \App\Models\PostModel());
     },

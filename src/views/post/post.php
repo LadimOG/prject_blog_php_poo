@@ -57,9 +57,7 @@ $title = SanitizerString::secureShowOutput($data['post']['title']) ?>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php endif ?>
-                <form action="/post/comment" method="GET">
-                    <button type="submit" class="btn btn-primary mt-2  w-100">Ajouter un commentaire</button>
-                </form>
+                <a class="btn btn-primary mt-2  w-100" href="/post/comment">Ajouter un commentaire</a>
             </div>
         <?php endif ?>
     </div>
