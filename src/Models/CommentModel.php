@@ -4,8 +4,6 @@ namespace App\Models;
 
 
 use App\lib\ConnectDb;
-
-
 use PDO;
 
 class CommentModel

@@ -12,7 +12,7 @@
         <form class=" container-xl border px-2 py-3 rounded-2 shadow" method="POST" action="/login">
             <div class="form-group mb-3">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" name="email" id="email1" placeholder="Entrer votre email">
+                <input type="email" class="form-control" name="email" id="email1" value="" placeholder="Entrer votre email">
             </div>
             <div class="form-group mb-4">
                 <label for="password">Password</label>

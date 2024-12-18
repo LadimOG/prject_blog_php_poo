@@ -41,6 +41,7 @@ class LoginController
                 $this->session->setSession('user_id', $user['id']);
                 $this->session->setSession('user_name', $user['firstname']);
                 $this->session->setSession('connected', true);
+                $this->session->setSession('ROLE', $user['role']);
 
                 $redirected = $this->session->getSession('redirect');
                 if ($redirected) {

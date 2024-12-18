@@ -2,14 +2,15 @@
 session_start();
 require '../vendor/autoload.php';
 
-
+use App\lib\SessionManager;
+use App\Models\UserModel;
 use FastRoute\Dispatcher;
 use FastRoute\RouteCollector;
 
 $container = [
 
     'App\Controllers\AdminController' => function () {
-        return new \App\Controllers\AdminController(new \App\Services\AdminManager);
+        return new \App\Controllers\AdminController(new \App\Services\AdminManager(new SessionManager));
     },
 
     'App\Controllers\HomeController' => function () {

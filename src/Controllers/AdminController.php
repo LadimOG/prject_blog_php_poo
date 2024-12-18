@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
+use App\lib\Redirect;
 use App\lib\SessionManager;
+use App\lib\View;
 use App\Services\AdminManager;
 
 class AdminController
@@ -17,6 +19,9 @@ class AdminController
 
     public function showDashboard()
     {
-        return $this->adminManager->isAdmin();
+        if (!$this->adminManager->isAdmin()) {
+            Redirect::to('/');
+            return;
+        }
     }
 }
